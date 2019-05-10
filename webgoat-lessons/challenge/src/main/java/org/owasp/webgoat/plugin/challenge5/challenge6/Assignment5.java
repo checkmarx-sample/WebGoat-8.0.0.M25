@@ -45,7 +45,7 @@ public class Assignment5 extends AssignmentEndpoint {
         if (!"Larry".equals(username_login)) {
             return failed().feedback("user.not.larry").feedbackArgs(username_login).build();
         }
-//--Vulnerable---
+//--Vulnerable----
         PreparedStatement statement = connection.prepareStatement("select password from " + USERS_TABLE_NAME + " where userid = '" + username_login + "' and password = '" + password_login + "'");
 //--Vulnerable---
 //--Fix---

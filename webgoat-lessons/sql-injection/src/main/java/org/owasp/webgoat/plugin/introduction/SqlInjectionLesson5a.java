@@ -61,7 +61,7 @@ public class SqlInjectionLesson5a extends AssignmentEndpoint {
     String query = "";
     try {
       Connection connection = DatabaseUtilities.getConnection(getWebSession());
-//----VULN
+//----VULN--
       query = "SELECT * FROM user_data WHERE first_name = 'John' and last_name = '" + accountName + "'";
       try(Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
               ResultSet.CONCUR_READ_ONLY)) {

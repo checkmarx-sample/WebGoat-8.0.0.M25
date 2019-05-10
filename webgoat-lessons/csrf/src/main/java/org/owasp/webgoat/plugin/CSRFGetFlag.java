@@ -44,7 +44,7 @@ public class CSRFGetFlag extends Endpoint {
 
         if (referer.equals("NULL")) {
             if (req.getParameter("csrf").equals("true")) {
-//--VULNERABLE----
+//--VULNERABLE---- 
             	Random random = new Random();
                 userSessionData.setValue("csrf-get-success", random.nextInt(65536));
 //--VULNERABLE----

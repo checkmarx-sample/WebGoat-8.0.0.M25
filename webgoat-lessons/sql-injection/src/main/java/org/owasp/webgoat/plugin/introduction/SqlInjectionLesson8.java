@@ -36,7 +36,7 @@ public class SqlInjectionLesson8 extends AssignmentEndpoint {
             Connection connection = DatabaseUtilities.getConnection(getWebSession());
 
             try {
-//------Vulnerability--
+//------Vulnerability---
 //////            	Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 //------Vulnerability--        
 

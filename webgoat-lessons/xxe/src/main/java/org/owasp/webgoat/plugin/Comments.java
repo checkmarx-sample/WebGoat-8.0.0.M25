@@ -63,7 +63,7 @@ public class Comments {
         JAXBContext jc = JAXBContext.newInstance(Comment.class);
 
         XMLInputFactory xif = XMLInputFactory.newFactory();
-//-----VULNERABLE-------
+//-----VULNERABLE------- 
 
         xif.setProperty(XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES, true);
         xif.setProperty(XMLInputFactory.IS_VALIDATING, false);
