@@ -13,6 +13,6 @@ scan:
     - pwd
     - ls -al
     - chmod 755 runCxConsole.sh
-    - ./runCxConsole.sh Scan -v -CxServer $CM_SITE_URL -projectName $CI_PROJECT_NAME -CxUser $CM_UID -CxPassword $CM_PWD -Locationtype folder -locationpath ../testcode -Preset STIG
+    - ./runCxConsole.sh Scan -v -CxServer http://cxsample.eastus.cloudapp.azure.com -projectName "CxServer\WebGoat-8.0.0.M25" -CxUser "admin@cx" -CxPassword "CheckMarx@01" -Locationtype folder -locationpath ../. -locationPathExclude "webgoat-server,webwolf,scripts,platformQuickStarts,CxConsolePlugin" -Preset "Checkmarx Default"  -incremental
   artifacts:
     paths: [gl-cm-report.json]
