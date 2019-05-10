@@ -1,0 +1,18 @@
+image: java:latest
+
+stages:
+  - scan
+
+scan:
+  stage: scan
+  script:
+    - pwd
+    - ls -al
+    - echo $JAVA_HOME
+    - cd CxConsolePlugin
+    - pwd
+    - ls -al
+    - chmod 755 runCxConsole.sh
+    - ./runCxConsole.sh Scan -v -CxServer $CM_SITE_URL -projectName $CI_PROJECT_NAME -CxUser $CM_UID -CxPassword $CM_PWD -Locationtype folder -locationpath ../testcode -Preset STIG
+  artifacts:
+    paths: [gl-cm-report.json]
