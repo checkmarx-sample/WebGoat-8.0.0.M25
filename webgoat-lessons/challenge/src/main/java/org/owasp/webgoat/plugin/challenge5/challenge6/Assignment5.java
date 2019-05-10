@@ -45,8 +45,18 @@ public class Assignment5 extends AssignmentEndpoint {
         if (!"Larry".equals(username_login)) {
             return failed().feedback("user.not.larry").feedbackArgs(username_login).build();
         }
-
+//--Vulnerable---
         PreparedStatement statement = connection.prepareStatement("select password from " + USERS_TABLE_NAME + " where userid = '" + username_login + "' and password = '" + password_login + "'");
+//--Vulnerable---
+//--Fix---
+
+//      String query = "select password from " + USERS_TABLE_NAME + " where userid = ? and password = ?";
+//      PreparedStatement statement = connection.createStatement(query);
+//		statement.setString(1, username_login);
+//		statement.setString(2, password_login);
+        
+//--Fix---
+        
         ResultSet resultSet = statement.executeQuery();
 
         if (resultSet.next()) {

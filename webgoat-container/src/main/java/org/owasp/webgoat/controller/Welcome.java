@@ -61,7 +61,18 @@ public class Welcome {
         // set the welcome attribute
         // this is so the attack servlet does not also 
         // send them to the welcome page
+
+//---VULNERABLE----    	
         HttpSession session = request.getSession();
+//---VULNERABLE----
+//---FIX-------
+//if (session != null)
+//{
+//	session.invalidate()
+//}
+//	session = request.getSession(true)
+//---FIX------
+        
         if (session.getAttribute(WELCOMED) == null) {
             session.setAttribute(WELCOMED, "true");
         }

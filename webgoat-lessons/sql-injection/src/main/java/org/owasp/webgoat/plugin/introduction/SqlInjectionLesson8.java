@@ -29,17 +29,25 @@ public class SqlInjectionLesson8 extends AssignmentEndpoint {
     protected AttackResult injectableQueryConfidentiality(String name, String auth_tan) {
         StringBuffer output = new StringBuffer();
 //------Vulnerability--        
-        String query = "SELECT * FROM employees WHERE last_name = '" + name + "' AND auth_tan = '" + auth_tan + "'";
-//---------------------
-//Fix - 15,17
-//---------------------        
-
+//////        String query = "SELECT * FROM employees WHERE last_name = '" + name + "' AND auth_tan = '" + auth_tan + "'";
+//------Vulnerability--        
         
         try {
             Connection connection = DatabaseUtilities.getConnection(getWebSession());
 
             try {
-                Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+//------Vulnerability--
+//////            	Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+//------Vulnerability--        
+
+//Fix - 15,17
+//---------------------        
+                String query = "SELECT * FROM employees WHERE last_name = ? AND auth_tan = ?";
+        		PreparedStatement statement = con.createStatement(query);
+        		statement.setString(1, name);
+        		statement.setString(2, auth_tan);
+//---------------------        
+        		
                 log(connection, query);
                 ResultSet results = statement.executeQuery(query);
 
