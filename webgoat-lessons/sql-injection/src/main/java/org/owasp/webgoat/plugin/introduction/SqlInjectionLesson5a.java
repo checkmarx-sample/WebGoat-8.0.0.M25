@@ -70,7 +70,7 @@ public class SqlInjectionLesson5a extends AssignmentEndpoint {
 //    query = "SELECT * FROM user_data WHERE first_name = 'John' and last_name = ?";
 //    try(PreparedStatement statement = connection.createStatement(query)) {
 //    statement.setString(1, accountNamein);
-//--FIX
+//--FIX-
     	  
         ResultSet results = statement.executeQuery(query);
 

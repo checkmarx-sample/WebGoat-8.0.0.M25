@@ -65,7 +65,7 @@ public class Welcome {
 //---VULNERABLE----    	
         HttpSession session = request.getSession();
 //---VULNERABLE----
-//---FIX--------
+//---FIX----------
 //if (session != null)
 //{
 //	session.invalidate()

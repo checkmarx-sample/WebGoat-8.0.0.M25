@@ -47,7 +47,7 @@ public class Assignment5 extends AssignmentEndpoint {
         }
 //--Vulnerable----
         PreparedStatement statement = connection.prepareStatement("select password from " + USERS_TABLE_NAME + " where userid = '" + username_login + "' and password = '" + password_login + "'");
-//--Vulnerable---
+//--Vulnerable----
 //--Fix---
 
 //      String query = "select password from " + USERS_TABLE_NAME + " where userid = ? and password = ?";

@@ -38,7 +38,7 @@ public class SqlInjectionLesson8 extends AssignmentEndpoint {
             try {
 //------Vulnerability---
 //////            	Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-//------Vulnerability--        
+//------Vulnerability---        
 
 //Fix - 15,17
 //---------------------        

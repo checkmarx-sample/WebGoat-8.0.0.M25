@@ -42,7 +42,7 @@ public class SqlInjectionLesson9 extends AssignmentEndpoint {
                         // no results
                         return trackProgress(failed().feedback("sql-injection.8.no.results").build());
                     }
-
+ 
                 }
             } catch (SQLException e) {
                 System.err.println(e.getMessage());

@@ -93,7 +93,7 @@ public class PluginMessages extends ReloadableResourceBundleMessageSource {
 		
 
 
-//-------FIX--
+//-------FIX---
 
     }
 }

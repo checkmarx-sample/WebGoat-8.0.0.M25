@@ -47,7 +47,7 @@ public class CSRFGetFlag extends Endpoint {
 //--VULNERABLE---- 
             	Random random = new Random();
                 userSessionData.setValue("csrf-get-success", random.nextInt(65536));
-//--VULNERABLE----
+//--VULNERABLE-----
 //--FIX-----------
 //                SecureRandom random = new SecureRandom();
 //                byte sessBytes[] = new byte[32];

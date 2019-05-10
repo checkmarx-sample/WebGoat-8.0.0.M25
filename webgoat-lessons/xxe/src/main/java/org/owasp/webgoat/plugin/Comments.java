@@ -75,7 +75,7 @@ public class Comments {
 //        xif.setProperty(XMLInputFactory.IS_VALIDATING, false);
 //
 //        xif.setProperty(XMLInputFactory.SUPPORT_DTD, false);
-//-----FIX-------
+//-----FIX--------
         
         XMLStreamReader xsr = xif.createXMLStreamReader(new StringReader(xml));
 
