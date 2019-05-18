@@ -44,8 +44,16 @@ public class CSRFGetFlag extends Endpoint {
 
         if (referer.equals("NULL")) {
             if (req.getParameter("csrf").equals("true")) {
-                Random random = new Random();
+//--VULNERABLE---- 
+            	Random random = new Random();
                 userSessionData.setValue("csrf-get-success", random.nextInt(65536));
+//--VULNERABLE-----
+//--FIX-----------
+//                SecureRandom random = new SecureRandom();
+//                byte sessBytes[] = new byte[32];
+//                userSessionData.setValue("csrf-get-success", random.nextBytes(sessBytes));
+//--FIX-----------
+                
                 response.put("success", true);
                 response.put("message", pluginMessages.getMessage("csrf-get-null-referer.success"));
                 response.put("flag", userSessionData.getValue("csrf-get-success"));
