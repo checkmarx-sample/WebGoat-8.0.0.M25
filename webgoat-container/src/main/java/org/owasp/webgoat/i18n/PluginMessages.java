@@ -84,16 +84,15 @@ public class PluginMessages extends ReloadableResourceBundleMessageSource {
 //----VULNERABLE		
         return super.getMessage(code, args, defaultValue, language.getLocale());
 //----VULNERABLE		
-//-------FIX-
 //		Encoder encoder = ESAPI.encoder();
 //		String encodedMessage;
 //		encodedMessage = super.getMessage(code, args, defaultValue, language.getLocale());
 //		encodedMessage = encoder.encodeForJavaScript(encodedMessage);	
 //		return encodedMessage;
 		
+//-------FIX
 
-
-//-------FIX---
+//-------FIX
 
     }
 }
