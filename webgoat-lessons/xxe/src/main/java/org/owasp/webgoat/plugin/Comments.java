@@ -63,7 +63,7 @@ public class Comments {
         JAXBContext jc = JAXBContext.newInstance(Comment.class);
 
         XMLInputFactory xif = XMLInputFactory.newFactory();
-//-----VULNERABLE------- 
+//-----VULNERABLE-------
 
         xif.setProperty(XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES, true);
         xif.setProperty(XMLInputFactory.IS_VALIDATING, false);
@@ -75,7 +75,7 @@ public class Comments {
 //        xif.setProperty(XMLInputFactory.IS_VALIDATING, false);
 //
 //        xif.setProperty(XMLInputFactory.SUPPORT_DTD, false);
-//-----FIX--------
+//-----FIX-------
         
         XMLStreamReader xsr = xif.createXMLStreamReader(new StringReader(xml));
 
