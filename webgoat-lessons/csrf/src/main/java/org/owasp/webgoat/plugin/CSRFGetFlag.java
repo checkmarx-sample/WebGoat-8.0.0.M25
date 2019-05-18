@@ -1,20 +1,6 @@
 package org.owasp.webgoat.plugin;
 
 import org.owasp.webgoat.assignments.Endpoint;
-import org.owasp.webgoat.i18n.PluginMessages;
-import org.owasp.webgoat.session.UserSessionData;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
 
 /**
  * Created by jason on 9/30/17.
@@ -44,10 +30,10 @@ public class CSRFGetFlag extends Endpoint {
 
         if (referer.equals("NULL")) {
             if (req.getParameter("csrf").equals("true")) {
-//--VULNERABLE---- 
+//--VULNERABLE----
             	Random random = new Random();
                 userSessionData.setValue("csrf-get-success", random.nextInt(65536));
-//--VULNERABLE-----
+//--VULNERABLE----
 //--FIX-----------
 //                SecureRandom random = new SecureRandom();
 //                byte sessBytes[] = new byte[32];
